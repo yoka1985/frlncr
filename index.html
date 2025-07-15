@@ -1,184 +1,238 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jonathan Katz - Freelance Data Scientist</title>
+    <meta name="description" content="Expert AI Partner for Innovative Wellness & Research Ventures | Specializing in Custom NLP & AI Agent Solutions">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* Custom styles to match the original site's aesthetic */
+        /* Custom styles to match the site's aesthetic */
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #22014d; /* Deep purple from original design */
+            font-family: sans-serif; /* A sensible default font */
+            background-color: #22014d;
             color: #ffffff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
         }
 
-        /* Hero section background styling */
-        .hero-bg {
-            /* Using a placeholder that evokes a grand, technical feel as requested */
-            background-image: url('https://placehold.co/1920x1080/020617/c0a0ff?text=Grande+Tech+Background');
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* Hero Section Styling */
+        .hero-section {
+            background-image: url('https://jonathankatz.pro/Data%20Analyst%20Website_files/a0bd2885eae7e7a67df89907dc58acd0.png');
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 1rem;
         }
 
-        /* Styling for the prominent Call-to-Action button */
-        .cta-button-large {
+        .hero-section h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem); /* Responsive font size */
+            font-weight: 800;
+        }
+
+        .hero-section p {
+            font-size: clamp(1rem, 3vw, 1.5rem); /* Responsive font size */
+            color: #cda3ff;
+            max-width: 800px;
+            margin-top: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Call-to-Action Button */
+        .cta-button {
             display: inline-block;
-            padding: 1rem 2.5rem; /* Increased padding for a larger button */
-            background-color: #cda3ff; /* Accent color from original design */
-            color: #22014d; /* Dark text for contrast */
-            font-size: 1.125rem; /* Larger font size */
+            padding: 0.8rem 2rem;
+            background-color: #cda3ff;
+            color: #22014d;
+            font-size: 1.1rem;
             font-weight: bold;
             text-decoration: none;
-            border-radius: 50px; /* Pill shape */
-            border: 2px solid transparent;
+            border-radius: 50px;
+            transition: all 0.3s ease;
             cursor: pointer;
-            transition: all 0.3s ease;
-            text-align: center;
-            box-shadow: 0 8px 20px rgba(205, 163, 255, 0.25);
+            margin-top: 1.5rem;
+            box-shadow: 0 4px 15px rgba(205, 163, 255, 0.2);
         }
 
-        .cta-button-large:hover,
-        .cta-button-large:focus {
+        .cta-button:hover,
+        .cta-button:focus {
             background-color: #ffffff;
-            color: #22014d;
-            transform: translateY(-3px); /* Slightly more lift on hover */
-            box-shadow: 0 12px 25px rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+        }
+        
+        /* General Section Styling */
+        section {
+            padding: 4rem 1rem;
         }
 
-        .cta-button-large:active {
-            transform: translateY(0);
-            box-shadow: none;
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            align-items: center;
         }
 
-        /* Custom card styling to mimic the original's look */
-        .service-card {
-            background-color: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
+        @media (min-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        /* About Section */
+        .about-image img {
+            width: 100%;
+            height: auto;
+            max-width: 450px;
             border-radius: 1rem;
-            padding: 2rem;
-            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            margin: auto;
+            display: block;
         }
 
-        .service-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(205, 163, 255, 0.5);
+        .about-text h2 {
+             font-size: clamp(2rem, 5vw, 2.5rem);
+             font-weight: 700;
+             margin-bottom: 1rem;
         }
 
-        /* Smooth scrolling for anchor links */
-        html {
-            scroll-behavior: smooth;
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #e2e8f0;
+            margin-bottom: 1rem;
+        }
+        
+        /* Expertise Section */
+        .expertise-column h3 {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            color: #cda3ff;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .expertise-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .expertise-column li {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 0.5rem;
+        }
+        
+        .expertise-column h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Contact Section */
+        #contact {
+            text-align: center;
+        }
+
+        #contact p {
+            max-width: 600px;
+            margin: 1.5rem auto;
+            font-size: 1.2rem;
         }
     </style>
 </head>
-<body class="antialiased">
+<body>
 
-    <div id="root">
-
-        <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-center p-6">
-            <div>
-                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-4">
-                    Jonathan Katz
-                </h1>
-                <p class="text-lg md:text-2xl text-slate-200 max-w-3xl mx-auto mb-10" style="color: #cda3ff;">
-                    Expert AI Partner for Innovative Wellness & Research Ventures | Specializing in Custom NLP & AI Agent Solutions
-                </p>
-                <a href="#contact" class="cta-button-large">
-                    Let's Connect
-                </a>
-            </div>
+    <main>
+        <section id="home" class="hero-section">
+            <h1>Jonathan Katz</h1>
+            <p>Expert AI Partner for Innovative Wellness & Research Ventures | Specializing in Custom NLP & AI Agent Solutions</p>
+            <a href="#contact" class="cta-button">Let's Connect</a>
         </section>
 
-        <section id="about" class="py-20 lg:py-32 bg-[#22014d]">
-            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-                <div class="md:pr-8">
-                     <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">About Me</h2>
-                    <p class="text-slate-300 mb-4 leading-relaxed">
-                        I am a dedicated and results-oriented data scientist with a passion for leveraging artificial intelligence to solve complex challenges, particularly within the wellness and research sectors. My expertise lies in developing custom AI models, sophisticated NLP solutions, and intelligent automation agents that deliver tangible results.
-                    </p>
-                    <p class="text-slate-300 leading-relaxed">
-                        With a strong foundation in both the theoretical and practical aspects of machine learning, I partner with innovative ventures to transform data into actionable insights and create intelligent systems that enhance human capability.
-                    </p>
+        <section id="about">
+            <div class="container grid-container">
+                <div class="about-text">
+                    <h2>ABOUT ME</h2>
+                    <p>I am a dedicated and results-oriented data scientist with a passion for leveraging artificial intelligence to solve complex challenges, particularly within the wellness and research sectors.</p>
+                    <p>My expertise lies in developing custom AI models, sophisticated NLP solutions, and intelligent automation agents that deliver tangible results.</p>
                 </div>
-                <div>
-                    <img src="https://placehold.co/600x700/cda3ff/22014d?text=Jonathan+and+Partners" alt="Jonathan Katz with his partners" class="rounded-2xl shadow-2xl shadow-black/30 w-full h-auto object-cover">
+                <div class="about-image">
+                    <img src="https://jonathankatz.pro/Data%20Analyst%20Website_files/clients.jpg" alt="Jonathan Katz collaborating with partners">
                 </div>
             </div>
         </section>
 
-        <section id="services" class="py-20 lg:py-32 bg-[#22014d] border-t border-slate-700">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white">Areas of Expertise</h2>
-                    <p class="text-slate-400 mt-2">Leveraging advanced technology to build powerful solutions.</p>
-                </div>
-
-                <div class="grid lg:grid-cols-2 gap-16">
-                    <div>
-                        <h3 class="text-2xl font-bold text-white mb-8 text-center lg:text-left">Services</h3>
-                        <div class="space-y-8">
-                            <div class="service-card">
-                                <h4 class="text-xl font-semibold text-white mb-2">AI Agent Strategy & Development</h4>
-                                <p class="text-slate-300">Design and build autonomous AI agents to automate workflows, enhance user engagement, and streamline operations.</p>
-                            </div>
-                            <div class="service-card">
-                                <h4 class="text-xl font-semibold text-white mb-2">Custom NLP & LLM Solutions</h4>
-                                <p class="text-slate-300">Develop bespoke Natural Language Processing models for sentiment analysis, text summarization, and advanced chatbot capabilities.</p>
-                            </div>
-                             <div class="service-card">
-                                <h4 class="text-xl font-semibold text-white mb-2">End-to-End AI Project Delivery</h4>
-                                <p class="text-slate-300">From consultation and data analysis to model deployment and maintenance, I manage the entire AI project lifecycle.</p>
-                            </div>
-                        </div>
+        <section id="services">
+            <div class="container">
+                <h2 class="section-title">Areas of Expertise</h2>
+                <div class="grid-container">
+                    <div class="expertise-column">
+                        <h3>Services</h3>
+                        <ul>
+                            <li>
+                                <h4>AI Agent Strategy & Development</h4>
+                                <p>Design and build autonomous AI agents to automate workflows, enhance user engagement, and streamline operations.</p>
+                            </li>
+                            <li>
+                                <h4>Custom NLP & LLM Solutions</h4>
+                                <p>Develop bespoke Natural Language Processing models for sentiment analysis, text summarization, and advanced chatbot capabilities.</p>
+                            </li>
+                            <li>
+                                <h4>End-to-End AI Project Delivery</h4>
+                                <p>From consultation and data analysis to model deployment and maintenance, I manage the entire AI project lifecycle.</p>
+                            </li>
+                        </ul>
                     </div>
-
-                    <div>
-                        <h3 class="text-2xl font-bold text-white mb-8 text-center lg:text-left">Skills</h3>
-                        <div class="space-y-8">
-                             <div class="service-card">
-                                <h4 class="text-xl font-semibold text-white mb-2">Code & Core Dev</h4>
-                                <p class="text-slate-300">Python, SQL, AWS, Docker, Git</p>
-                            </div>
-                            <div class="service-card">
-                                <h4 class="text-xl font-semibold text-white mb-2">AI/ML Expertise</h4>
-                                <p class="text-slate-300">TensorFlow, PyTorch, Scikit-learn, Pandas</p>
-                            </div>
-                            <div class="service-card">
-                                <h4 class="text-xl font-semibold text-white mb-2">Data Insights & Custom Models</h4>
-                                <p class="text-slate-300">Statistical Analysis, Predictive Modeling, Data Visualization</p>
-                            </div>
-                        </div>
+                    <div class="expertise-column">
+                        <h3>Skills</h3>
+                        <ul>
+                            <li>
+                                <h4>Code & Core Dev</h4>
+                                <p>Python, SQL, AWS, Docker, Git</p>
+                            </li>
+                            <li>
+                                <h4>AI/ML Expertise</h4>
+                                <p>TensorFlow, PyTorch, Scikit-learn, Pandas</p>
+                            </li>
+                             <li>
+                                <h4>Data Insights & Custom Models</h4>
+                                <p>Statistical Analysis, Predictive Modeling, Data Visualization, AI Agents & Automation</p>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
-
-        <section id="contact" class="py-20 lg:py-32 text-center bg-[#22014d] border-t border-slate-700">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-white">Ready to Innovate?</h2>
-                <p class="text-slate-300 mt-4 max-w-xl mx-auto">
-                    Let's discuss how we can leverage AI to achieve your goals. Reach out to start the conversation.
-                </p>
-                <a href="mailto:yoka333@gmail.com" class="cta-button-large mt-10">
-                    Let's Talk
-                </a>
-                <p class="text-slate-400 mt-6 text-sm">
-                    Or email me directly at: <a href="mailto:yoka333@gmail.com" class="font-semibold" style="color: #cda3ff;">yoka333@gmail.com</a>
-                </p>
+        
+        <section id="contact">
+            <div class="container">
+                <h2 class="section-title">Ready to Innovate?</h2>
+                <p>Let's discuss how we can leverage AI to achieve your goals. Reach out to start the conversation.</p>
+                <a href="mailto:yoka333@gmail.com" class="cta-button">yoka333@gmail.com</a>
             </div>
         </section>
-
-        <footer class="bg-slate-900/80 border-t border-slate-800">
-            <div class="container mx-auto px-6 py-8 text-center text-slate-500">
-                <p>&copy; 2025  Jonathan Katz. All Rights Reserved.</p>
-            </div>
-        </footer>
-    </div>
+    </main>
 
 </body>
 </html>
